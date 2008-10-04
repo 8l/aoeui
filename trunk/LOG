@@ -1,0 +1,107 @@
+10-04 1.2 release
+09-09 pmk: display regular expressions during searches
+09-09 pmk: swap ^J and ^M, so that Enter causes automatic alignment
+09-05 pmk: fix original~ file saving and bad writes to read-only files
+09-05 pmk: fix TAGS with absolute paths
+09-05 pmk: fix folding, tweak motion by words and identifiers
+07-04 1.1.2 release
+04-18 pmk: shell mode via ptys
+04-16 pmk: basic keyword highlighting for C/C++
+04-11 pmk: multiple TAGS files in directory hierarchy, multiple hits
+04-07 pmk: true UP and DOWN arrow movement keys
+04-04 pmk: make default ^O macro a global value, not per-view
+04-04 pmk: make last search match a global string, not per-view
+04-04 pmk: lots of code cleanup
+04-03 1.1.1 release
+04-02 pmk: snap buffers on abort (^\)
+04-01 pmk: make DELETE key synonymous with BACKSPACE (for screen(1))
+02-29 pmk: -s (no_tabs)
+01-21 pmk: Mac OS X port
+2008
+12-26 pmk: support a repeat count on macros, abort macros on failed search
+10-29 pmk: fix ^ and $ in regex searches by adding REG_NEWLINE to regcomp
+08-29 pmk: support output from exuberant-ctags
+08-13 pmk: add -u and -U options to force and disable automatic UTF-8 detection
+07-12 pmk: fix non-UTF-8 detection when UTF-8 sequence spans first page boundary
+07-12 1.1.0 release
+07-11 pmk: fix partial escape sequence parsing, support $ROWS/$COLUMNS
+07-10 pmk: erase display after display size change
+07-06 pmk: disable UTF-8 and accept DOS CR-NL line ends automatically
+07-02 pmk: fix looping bug after redefined macro
+07-02 pmk: fix hex literal characters
+06-29 1.0.3 release
+06-28 pmk: handle all Escape sequences and conversions in display.c
+06-27 pmk: allow multibyte characters in macros and display input
+06-27 pmk: fix buffered input bug
+06-27 pmk: modularized macro facility, function key definitions
+06-27 pmk: fix misspellings in documentation
+06-27 pmk: remove -Werror and TAGS default build from Makefile
+06-26 pmk: preserve original mark when search ends with ^V
+06-26 pmk: fixes, work again on serial port
+06-25 pmk: decode function keys and command responses in display.c, not mode.c
+06-25 pmk: get display size from terminal as backup to ioctl
+06-24 pmk: red cursor on read-only text, green cursor on dirty text
+06-24 pmk: fix cursor color bug
+06-23 1.0.2 release
+06-22 pmk: fun animated scrolling effects
+06-22 pmk: fix fg/bg colors so everything works on console
+06-22 pmk: use insert/delete of spaces and lines in display
+06-21 pmk: improve folding/unfolding commands
+06-21 pmk: remove needless erasures and cursor motion from display
+06-18 1.0.1 release
+06-18 pmk: nicer background colors
+06-07 pmk: "asdfg" QWERTY variant
+06-06 pmk: fix spurious "file may have changed" warning after renaming
+06-01 pmk: some code cleaning
+05-30 1.0.0 release! yay
+05-24 pmk: tweak automatic alignment
+05-22 pmk: some minor BSD porting issues in buffer.c and file.c
+05-16 pmk: tweak ebuild according to gentoo developer's comments
+04-18 pmk: fix path name tab completion (shortest common continuation)
+04-18 1.0_alpha5
+04-17 pmk: rewrote alignment
+04-15 pmk: generalized tab completion
+04-15 pmk: don't set mark automatically with ^]
+04-13 pmk: color-cue paired brackets
+04-13 pmk: clean up scratch files better
+04-13 pmk: ^A (macros) is now ^O, so that ^A is available to screen(1)
+04-13 pmk: registers for ^B and regexs
+04-12 pmk: regex searches begun
+04-11 pmk: somewhat less ugly colors in xterms
+04-09 1.0_alpha4
+04-09 pmk: code folding
+04-07 pmk: code buffing
+04-06 commit
+04-06 pmk: improve tag command
+04-06 pmk: create new files 644, not 600
+04-06 pmk: pull basic help text into program
+04-05 pmk: fix cursor placement at end of full line, make it smart
+04-04 commit
+04-02 pmk: TAGS support (^Space.)
+04-01 pmk: shell mode (^E without selection)
+03-31 1.0_alpha3
+03-30 pmk: generalize the asynchronous child I/O implementation
+03-30 pmk: change emergency exit from ^\ to ^Space^\
+03-29 pmk: some optimization of repainting
+03-29 pmk: debug behavior when xterm window size changes
+03-28 pmk: support -t tabstop
+03-28 pmk: special-case 'cd' in ^E
+03-28 pmk: tab completion when cursor is at the end of a selection
+03-28 pmk: hexadecimal arguments and Unicode ^^ literals
+03-28 pmk: bookmarks
+03-28 pmk: *remove* bogus DOS/Mac newline handling
+03-28 pmk: ^Space # TAB sets tab stop
+03-28 pmk: reap terminated children
+03-28 pmk: asynchronous child I/O
+03-27 1.0_alpha2
+03-27 pmk: Make ^V with a selection unset it, ^Space^V exchange
+03-27 pmk: Clean up makefile, write ebuild
+03-26 pmk: Put newly-created texts in $HOME/.aoeui, etc.
+03-25 pmk: Keep active window background set to default color
+03-25 pmk: Keep file gap buffers in file# for recovery
+03-24 pmk: Save original~ copy of file at write time, not open time
+03-24 pmk: Memory-map clean images of files
+03-23 pmk: Create new empty texts when view_next() finds no others
+03-23 pmk: Make variant ^D with no selection select surrounding white space
+03-22 pmk: Initial Subversion check in at sourceforge.net
+2007
