@@ -149,6 +149,7 @@ static struct view *show_tag(struct view *tags, sposition_t wordend,
 	if (at >= 0) {
 		locus_set(view, CURSOR, at);
 		locus_set(view, MARK, at + strlen(id));
+		mode_search(view, FALSE);
 	} else {
 		locus_set(view, CURSOR, linestart);
 		locus_set(view, MARK, UNSET);
@@ -176,7 +177,7 @@ static Boolean_t show_tags(struct view *tags, struct view *view,
 
 void find_tag(struct view *view)
 {
-	struct view *tags = NULL;
+	struct view *tags = NULL, *prior_tags;
 	char *id;
 
 	if (locus_get(view, MARK) != UNSET) {
@@ -189,21 +190,18 @@ void find_tag(struct view *view)
 		return;
 	}
 
-	if (!(tags = find_TAGS(view, NULL))) {
+	while ((tags = find_TAGS(view, prior_tags = tags)))
+		if (show_tags(tags, view, id))
+			break;
+
+	if (tags)
+		view_close(tags);
+	else if (!prior_tags)
 		message("No readable TAGS file found.");
-		RELEASE(id);
-		return;
+	else {
+		errno = 0;
+		message("couldn't find tag %s", id);
 	}
 
-	do {
-		if (show_tags(tags, view, id)) {
-			view_close(tags);
-			RELEASE(id);
-			return;
-		}
-	} while ((tags = find_TAGS(view, tags)));
-
-	errno = 0;
-	message("couldn't find tag %s", id);
 	RELEASE(id);
 }

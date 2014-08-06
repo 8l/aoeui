@@ -269,7 +269,8 @@ struct window *window_replace(struct view *old, struct view *new)
 	old->window = NULL;
 	locus_destroy(old, window->start);
 	window->start = locus_create(new, locus_get(new, CURSOR)+1);
-	return activate(new->window = window);
+	new->window = window;
+	return activate(window_recenter(new));
 }
 
 struct view *window_current_view(void)
