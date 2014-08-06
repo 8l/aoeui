@@ -1,3 +1,8 @@
+08-06 1.7 release
+2014
+08-26 pmk: C++11 keywords
+03-01 pmk: "find tag" now opens view as search
+2013
 11-25 pmk: fix ESC-'@' (ALT+'@') and ESC-RET
 11-25 pmk: fix typos in man page
 09-25 pmk: erase and reset Xterm alt screen when done

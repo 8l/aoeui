@@ -290,6 +290,15 @@ void mode_search(struct view *view, Boolean_t regex)
 	mode->selection_bgrgba = SEARCH_BGRGBA;
 	mode->start = locus_get(view, CURSOR);
 	mode->mark = locus_get(view, MARK);
+	if (mode->mark != UNSET && mode->start < mode->mark && !regex) {
+		mode->bytes = mode->mark - mode->start;
+		mode->alloc = mode->bytes + 8;
+		mode->pattern = allocate(mode->alloc);
+		view_get(view, mode->pattern, mode->start, mode->bytes);
+		mode->last_bytes = mode->bytes;
+		locus_set(view, MARK, mode->start);
+		locus_set(view, CURSOR, mode->mark);
+	}
 	if (regex)
 		mode->regex = allocate0(sizeof *mode->regex);
 	view->mode = (struct mode *) mode;
