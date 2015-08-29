@@ -1,0 +1,1 @@
+aoeui is a very small and efficient display editor built upon a philosophy of making interaction with UNIX text manipulation commands easy, rather than duplicating their features.  Its command set is optimized for the Dvorak and QWERTY keyboard layouts.
